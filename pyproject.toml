@@ -1,8 +1,69 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
+requires = ["flit_core>=3.4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "lumache"
-authors = [{name = "Graziella", email = "graziella@lumache"}]
-dynamic = ["version", "description"]
+name = "molnetpack"
+version = "1.1.10.post1"
+authors = [
+    { name="Yuhui Hong" },
+    { name="Sujun Li" },
+    { name="Christopher J Welch" },
+    { name="Shane Tichy" },
+    { name="Yuzhen Ye" },
+    { name="Haixu Tang" }
+]
+maintainers = [
+    { name="Yuhui Hong", email="yuhhong@iu.edu" }, 
+]
+description = "3DMolMS: prediction of tandem mass spectra from 3D molecular conformations"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent"
+]
+dependencies = [
+    "absl-py",
+    "beautifulsoup4",
+    "filelock",
+    "gdown",
+    "grpcio",
+    "importlib-metadata",
+    "lxml",
+    "markdown",
+    "markupsafe",
+    "molmass",
+    "numpy",
+    "pandas",
+    "protobuf",
+    "pysocks",
+    "pyteomics",
+    "soupsieve",
+    "tensorboard",
+    "PyYAML",
+    "rdkit", 
+    "matplotlib",
+    "pillow"
+]
+
+# Additional documentation-related project configuration
+[project.optional-dependencies]
+docs = [
+    "sphinx>=5.0,<7.0",
+    "sphinx_rtd_theme>=1.0.0",
+    "myst-parser>=0.18.0",
+    "sphinxcontrib-napoleon>=0.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/JosieHong/3DMolMS/"
+Issues = "https://github.com/JosieHong/3DMolMS/issues"
+Changelog = "https://github.com/JosieHong/3DMolMS/blob/main/CHANGE_LOG.md"
+Documentation = "https://3dmolms.readthedocs.io/"
+
+# For Read the Docs configuration
+[tool.sphinx]
+source_dir = "docs/source"
+build_dir = "docs/build"

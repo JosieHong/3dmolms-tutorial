@@ -1,22 +1,24 @@
-Welcome to Lumache's documentation!
-===================================
+Welcome to 3DMolMS Documentation
+===============================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+3D Molecular Network for Mass Spectra Prediction (3DMolMS) is a deep neural network model to predict the MS/MS spectra of compounds from their 3D conformations. It can be used to:
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
-
-Contents
---------
+* Predict MS/MS spectra for small molecules
+* Generate reference libraries of small molecule MS/MS spectra for identification
+* Predict molecular properties like retention time (RT) and collision cross section (CCS)
+* Pretrain models on molecular datasets
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
-   usage
-   api
+   installation
+   usage/index
+   advanced_usage/index
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

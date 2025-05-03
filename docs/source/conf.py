@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = '3DMolMS'
+copyright = '2025, Yuhui Hong'
+author = 'Yuhui Hong'
 
-release = '0.1'
-version = '0.1.0'
+release = '0.1.10'
+version = '0.1.10'
 
 # -- General configuration
 
