@@ -43,13 +43,17 @@ To get started quickly, you can instantiate a MolNet and load a CSV or MGF file 
 
    import torch
    from molnetpack import MolNet, plot_msms
+
    # Set the device to CPU for CPU-only usage:
    device = torch.device("cpu")
+
    # For GPU usage, set the device as follows (replace '0' with your desired GPU index):
    # gpu_index = 0
    # device = torch.device(f"cuda:{gpu_index}")
+
    # Instantiate a MolNet object
    molnet_engine = MolNet(device, seed=42) # The random seed can be any integer. 
+
    # Load input data (here we use a CSV file as an example)
    molnet_engine.load_data(path_to_test_data='./test/input_msms.csv')
    """Load data from the specified path.
@@ -58,6 +62,7 @@ To get started quickly, you can instantiate a MolNet and load a CSV or MGF file 
    Returns:
        None
    """
+   
    # Predict MS/MS
    pred_spectra_df = molnet_engine.pred_msms(instrument='qtof')
    """Predict MS/MS spectra.
@@ -79,6 +84,6 @@ Plot Predicted MS/MS
 
 Below is an example of a predicted MS/MS spectrum plot.
 
-.. figure:: https://github.com/JosieHong/3DMolMS/blob/main/img/demo_0.png
+.. figure:: https://raw.githubusercontent.com/JosieHong/3DMolMS/main/img/demo_0.png
    :width: 600
    :align: center

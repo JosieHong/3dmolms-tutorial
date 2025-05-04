@@ -18,10 +18,30 @@ This document provides a guide to using 3DMolMS for inference through the ``moln
    sourcecode
    usage/index
    advanced_usage/index
+   supported_formats
 
-Indices and tables
-==================
+References
+----------
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. code-block:: bibtex
+
+   @article{hong20233dmolms,
+     title={3DMolMS: prediction of tandem mass spectra from 3D molecular conformations},
+     author={Hong, Yuhui and Li, Sujun and Welch, Christopher J and Tichy, Shane and Ye, Yuzhen and Tang, Haixu},
+     journal={Bioinformatics},
+     volume={39},
+     number={6},
+     pages={btad354},
+     year={2023},
+     publisher={Oxford University Press}
+   }
+   @article{hong2024enhanced,
+     title={Enhanced structure-based prediction of chiral stationary phases for chromatographic enantioseparation from 3D molecular conformations},
+     author={Hong, Yuhui and Welch, Christopher J and Piras, Patrick and Tang, Haixu},
+     journal={Analytical Chemistry},
+     volume={96},
+     number={6},
+     pages={2351--2359},
+     year={2024},
+     publisher={ACS Publications}
+   }

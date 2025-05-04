@@ -90,11 +90,3 @@ Arguments
 * ``--resume_path``: Path of model's checkpoint. In the first running, the checkpoint (``./checkpoint/molnet_qtof_etkdgv3.pt``) will be downloaded from `Google Drive <https://drive.google.com/drive/folders/1fWx3d8vCPQi-U-obJ3kVL3XiRh75x5Ce?usp=drive_link>`_. You can also set the resume path to your own model.
 * ``--result_path``: Path to save the predicted MS/MS. It should end with ``.mgf`` or ``.csv``. We recommend using ``.mgf`` because MGF is a more common format for MS/MS.
 * ``--save_img_dir``: Optional argument denoting the path to save the figures of predicted MS/MS.
-
-Example Output
-~~~~~~~~~~~~~
-
-.. figure:: https://raw.githubusercontent.com/JosieHong/3DMolMS/main/img/demo_0.png
-   :align: center
-   :width: 600px
-   :alt: Example of a predicted MS/MS spectrum visualization.
