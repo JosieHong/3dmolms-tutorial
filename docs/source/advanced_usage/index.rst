@@ -1,10 +1,10 @@
-Advanced Usage
-==============
+Advanced Features
+=================
 
-This section contains guides for advanced usage of 3DMolMS, including generating reference libraries and pretraining models.
+This section contains guides for advanced usage of 3DMolMS through source code, including pretraining models and generating reference libraries.
 
 .. toctree::
    :maxdepth: 2
    
-   generate_library
    pretrain
+   generate_library

@@ -11,7 +11,7 @@ Retention Time Prediction
 Setup
 ~~~~~
 
-Please set up the environment as shown in the :doc:`../installation` page.
+Please set up the environment as shown in the :doc:`../sourcecode` page.
 
 Data Preparation
 ~~~~~~~~~~~~~~~
@@ -66,7 +66,7 @@ Cross-Collision Section Prediction
 Setup
 ~~~~~
 
-Please set up the environment as shown in the :doc:`../installation` page.
+Please set up the environment as shown in the :doc:`../sourcecode` page.
 
 Data Preparation
 ~~~~~~~~~~~~~~~

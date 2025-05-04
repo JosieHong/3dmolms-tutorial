@@ -9,7 +9,7 @@ Using Molecules from HMDB
 Setup
 ~~~~~
 
-Please set up the environment as shown in the :doc:`../installation` page.
+Please set up the environment as shown in the :doc:`../sourcecode` page.
 
 Data Preparation
 ~~~~~~~~~~~~~~~

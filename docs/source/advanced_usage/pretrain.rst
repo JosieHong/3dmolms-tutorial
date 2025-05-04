@@ -6,7 +6,7 @@ This guide explains how to pretrain the 3DMolMS model on the QM9 dataset.
 Setup
 -----
 
-Please set up the environment as shown in the :doc:`../installation` page.
+Please set up the environment as shown in the :doc:`../sourcecode` page.
 
 Data Preparation
 ---------------

@@ -8,11 +8,14 @@ Welcome to 3DMolMS Documentation
 * Predict molecular properties like retention time (RT) and collision cross section (CCS)
 * Pretrain models on molecular datasets
 
+This document provides a guide to using 3DMolMS for inference through the ``molnetpack`` package and comprehensive usages of the source code for training and inference. 
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-   installation
+   molnetpack
+   sourcecode
    usage/index
    advanced_usage/index
 

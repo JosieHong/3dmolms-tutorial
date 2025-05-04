@@ -6,13 +6,7 @@ This guide explains how to use 3DMolMS for MS/MS prediction.
 Setup
 -----
 
-Step 0: Clone the repository and setup the environment:
-
-.. code-block:: bash
-
-   git clone https://github.com/JosieHong/3DMolMS.git
-   cd 3DMolMS
-   pip install .
+Please set up the environment as shown in the :doc:`../sourcecode` page.
 
 Input Preparation
 ----------------

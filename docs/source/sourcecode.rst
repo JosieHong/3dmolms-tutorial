@@ -1,23 +1,8 @@
-Installation
-============
+Source Code Setup
+=================
 
-Installing from PyPI
--------------------
-
-3DMolMS is available on PyPI as the package ``molnetpack``. You can install the latest version using ``pip``:
-
-.. code-block:: bash
-
-   pip install molnetpack
-
-PyTorch must be installed separately. Check the `official PyTorch website <https://pytorch.org/get-started/locally/>`_ for the proper version for your system. For example:
-
-.. code-block:: bash
-
-   pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
-
-Installing from Source
----------------------
+Installing from Source Code
+---------------------------
 
 3DMolMS can also be installed through source code:
 
@@ -26,6 +11,24 @@ Installing from Source
    git clone https://github.com/JosieHong/3DMolMS.git
    cd 3DMolMS
    pip install .
+
+PyTorch must be installed separately. Check the `official PyTorch website <https://pytorch.org/get-started/locally/>`_ for the proper version for your system. For example:
+
+.. code-block:: bash
+
+   pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+
+Update the Package locally
+--------------------------
+
+Every time you update the code, you can run the following command to update the package:
+
+.. code-block:: bash
+
+   cd 3DMolMS
+   pip install .
+
+Then you can use the package for various tasks as shown in the :doc:`./usage` and :doc:`./advanced_usage` page.
 
 Requirements
 -----------
