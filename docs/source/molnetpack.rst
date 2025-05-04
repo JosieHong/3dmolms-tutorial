@@ -1,4 +1,4 @@
-``molnetpack`` Installation & Usage
+PyPI Package Installation and Usage
 ====================================
 
 Using 3DMolMS through ``molnetpack`` requires minimal coding and is easy to use, but it does not support model training. If you want to train your own model, please refer to the :doc:`./sourcecode` page.

@@ -97,5 +97,4 @@ Example Output
 .. figure:: https://raw.githubusercontent.com/JosieHong/3DMolMS/main/img/demo_0.png
    :align: center
    :width: 600px
-
-   Example of a predicted MS/MS spectrum visualization.
+   :alt: Example of a predicted MS/MS spectrum visualization.
