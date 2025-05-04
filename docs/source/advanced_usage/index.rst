@@ -1,4 +1,4 @@
-Advanced Features
+Advanced features
 =================
 
 This section contains guides for advanced usage of 3DMolMS through source code, including pretraining models and generating reference libraries.

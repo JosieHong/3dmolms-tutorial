@@ -1,4 +1,4 @@
-Source Code Usage
+Source code usage
 =================
 
 This section contains instructions for training, fine-tuning, and testing 3DMolMS through source code for MS/MS prediction and property prediction.
