@@ -1,4 +1,4 @@
-PyPI Package Installation and Usage
+PyPI package installation and usage
 ====================================
 
 Using 3DMolMS through ``molnetpack`` requires minimal coding and is easy to use, but it does not support model training. If you want to train your own model, please refer to the :doc:`./sourcecode` page.
@@ -18,7 +18,7 @@ PyTorch must be installed separately. Check the `official PyTorch website <https
 
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
-Using ``molnetpack`` for Inference
+Using ``molnetpack`` for inference
 ----------------------------------
 
 The sample input files, a CSV and an MGF, are located at ``./test/demo_input.csv`` and ``./test/demo_input.mgf``, respectively. It's important to note that during the data loading phase, any input formats that are not supported will be automatically excluded. Below is a table outlining the types of input data that are supported:
@@ -74,7 +74,7 @@ To get started quickly, you can instantiate a MolNet and load a CSV or MGF file 
        pd.DataFrame: DataFrame containing the predicted MS/MS results.
    """
 
-Plot Predicted MS/MS
+Plot predicted MS/MS
 --------------------
 
 .. code-block:: python

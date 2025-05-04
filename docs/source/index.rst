@@ -12,12 +12,23 @@ This document provides a guide to using 3DMolMS for inference through the ``moln
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: PyPI package
 
    molnetpack
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Source code
+
    sourcecode
    usage/index
    advanced_usage/index
+   supported_formats
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Addtional information
+
    supported_formats
 
 References

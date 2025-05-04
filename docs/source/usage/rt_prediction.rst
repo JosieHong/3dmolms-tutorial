@@ -1,4 +1,4 @@
-Retention Time Prediction
+Retention time prediction
 =========================
 
 3DMolMS can be used to predict MS/MS-related properties, such as retention time (RT) and collision cross section (CCS). This guide shows how to train a model for RT prediction and CCS prediction, and how to transfer these models to your own RT and CCS dataset.
@@ -10,7 +10,7 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data Preparation
+Data preparation
 ----------------
 
 Step 1: Download the retention time dataset, `METLIN <https://figshare.com/articles/dataset/The_METLIN_small_molecule_dataset_for_machine_learning-based_retention_time_prediction/8038913?file=18130625>`_. The structure of data directory is:

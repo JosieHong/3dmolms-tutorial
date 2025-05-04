@@ -1,4 +1,4 @@
-Fine-tune on Your Own Data
+Fine-tune on your own data
 ==========================
 
 This section introduces how to fine-tune the model for regression tasks, such as retention time prediction, on your own data.
@@ -8,7 +8,7 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data Preparation
+Data preparation
 ----------------
 
 Step 1: Please prepare the data of molecular properties as:
@@ -42,7 +42,7 @@ Step 2: Fine-tune the model!
 
    # If the data is already preprocessed, you could use pkl file directly.
 
-Running Prediction
+Running prediction
 ------------------
 
 Step 3: Predict the unlabeled data

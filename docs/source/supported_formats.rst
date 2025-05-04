@@ -1,7 +1,7 @@
-Supported Formats
+Supported formats
 ==================
 
-Input Formats
+Input formats
 -------------
 
 CSV
@@ -22,7 +22,7 @@ PKL
 
 TBA
 
-Output Formats
+Output formats
 --------------
 
 TBA

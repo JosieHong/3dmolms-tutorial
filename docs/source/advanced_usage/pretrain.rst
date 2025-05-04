@@ -8,7 +8,7 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data Preparation
+Data preparation
 ---------------
 
 Step 1: Download the QM9 dataset from `Figshare <https://figshare.com/collections/Quantum_chemistry_structures_and_properties_of_134_kilo_molecules/978904>`_. The expected data directory structure is:

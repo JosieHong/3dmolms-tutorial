@@ -1,7 +1,7 @@
-Source Code Setup
+Source code setup
 =================
 
-Installing from Source Code
+Installing from source code
 ---------------------------
 
 3DMolMS can also be installed through source code:
@@ -18,7 +18,7 @@ PyTorch must be installed separately. Check the `official PyTorch website <https
 
    pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
 
-Update the Package Locally
+Update package locally
 --------------------------
 
 Every time you update the code, you can run the following command to update the package:

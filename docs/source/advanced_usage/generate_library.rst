@@ -1,9 +1,9 @@
-Generating a Reference Library for Molecular Identification
+Generating a reference library for molecular identification
 ====================================================
 
 3DMolMS can be used to generate a reference library of small molecule MS/MS spectra, which can then be used for small molecule identification through MS/MS searching.
 
-Using Molecules from HMDB
+Using molecules from HMDB
 ------------------------
 
 Setup
@@ -11,7 +11,7 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data Preparation
+Data preparation
 ~~~~~~~~~~~~~~~
 
 Step 1: Download the HMDB molecules dataset from `HMDB Downloads <https://hmdb.ca/downloads>`_. The expected data directory structure is:
@@ -39,7 +39,7 @@ Or using original conformation:
 
    python ./src/hmdb2pkl.py --data_config_path ./src/molnetpack/config/preprocess_hmdb.yml
 
-MS/MS Generation
+MS/MS generation
 ~~~~~~~~~~~~~~~
 
 Step 3: Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``. Remember to modify the commands if you're using the original conformations from HMDB.
@@ -55,7 +55,7 @@ Step 3: Use the following commands to generate MS/MS spectra. The model configur
      --result_path ./data/hmdb/molnet_v1.1_hmdb_etkdgv3_$i.mgf
    done
 
-Using Molecules from RefMet
+Using molecules from RefMet
 -------------------------
 
 Setup
@@ -63,7 +63,7 @@ Setup
 
 Please set up the environment as shown in the :doc:`../installation` page.
 
-Data Preparation
+Data preparation
 ~~~~~~~~~~~~~~~
 
 Step 1: Download the RefMet molecules dataset from `RefMet Browse <https://www.metabolomicsworkbench.org/databases/refmet/browse.php>`_. The expected data directory structure is:
@@ -83,7 +83,7 @@ Step 2: Use the following commands to preprocess the datasets. The dataset confi
 
    python ./src/refmet2pkl.py --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml
 
-MS/MS Generation
+MS/MS generation
 ~~~~~~~~~~~~~~~
 
 Step 3: Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``.
