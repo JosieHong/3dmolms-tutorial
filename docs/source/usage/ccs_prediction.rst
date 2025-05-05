@@ -1,5 +1,5 @@
-Cross-collision section prediction
-==================================
+Collision cross-collision section prediction
+============================================
 
 3DMolMS can be used to predict MS/MS-related properties, such as retention time (RT) and collision cross section (CCS). This guide shows how to train a model for RT prediction and CCS prediction, and how to transfer these models to your own RT and CCS dataset.
 
