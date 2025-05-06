@@ -28,7 +28,7 @@ Every time you update the code, you can run the following command to update the 
    cd 3DMolMS
    pip install .
 
-Then you can use the package for various tasks as shown in the :doc:`./usage` and :doc:`./advanced_usage` page.
+Then you can use the package for various tasks as shown in the :doc:`./usage/index` and :doc:`./advanced_usage/index` page.
 
 Requirements
 -----------

@@ -37,7 +37,15 @@ The sample input files, a CSV and an MGF, are located at ``./test/demo_input.csv
    * - Collision energy
      - any number
 
-To get started quickly, you can instantiate a MolNet and load a CSV or MGF file for MS/MS prediction as:
+To get started quickly, you can instantiate a MolNet and load a CSV or MGF file for MS/MS prediction using ``load_data`` function:
+
+.. autofunction:: MolNet.load_data
+
+Then predict the MS/MS spectra using ``pred_msms`` function. The predicted MS/MS spectra will be saved in the specified path. The default format is MGF, but you can also save it as a CSV file by specifying the file name with a ``.csv`` extension.
+
+.. autofunction:: molnet.MolNet.pred_msms
+
+For example: 
 
 .. code-block:: python
 
@@ -56,26 +64,21 @@ To get started quickly, you can instantiate a MolNet and load a CSV or MGF file 
 
    # Load input data (here we use a CSV file as an example)
    molnet_engine.load_data(path_to_test_data='./test/input_msms.csv')
-   """Load data from the specified path.
-   Args:
-       path_to_test_data (str): Path to the test data file. Supported formats are 'csv', 'mgf', and 'pkl'.
-   Returns:
-       None
-   """
    
    # Predict MS/MS
    pred_spectra_df = molnet_engine.pred_msms(instrument='qtof')
-   """Predict MS/MS spectra.
-   Args:
-       path_to_results (Optional[str]): Path to save the prediction results. Supports '.mgf' or '.csv' formats. If None, the results won't be saved. 
-       path_to_checkpoint (Optional[str]): Path to the model checkpoint. If None, the model will be downloaded from a default URL.
-       instrument (str): Type of instrument used ('qtof' or 'orbitrap').
-   Returns:
-       pd.DataFrame: DataFrame containing the predicted MS/MS results.
-   """
+
 
 Plot predicted MS/MS
 --------------------
+
+The predicted MS/MS spectra can be visualized using the ``plot_msms`` function: 
+
+.. autofunction:: molnet.plot_msms
+
+You may customize the plot by updating the source code directory, such as the size of the image and the color scheme. 
+
+For example:
 
 .. code-block:: python
 
@@ -111,7 +114,11 @@ Before doing any prediction, please intantiate ``MolNet``:
 RT prediction
 ~~~~~~~~~~~~~~
 
-For RT prediction, please use ``pred_rt`` as shown in the following codes after instantiating a MolNet object. Please note that since this model is trained on the METLIN-SMRT dataset, the predicted retention time is under the same experimental conditions as the METLIN-SMRT set.
+For RT prediction, please use ``pred_rt`` function after instantiating a MolNet object. Please note that since this model is trained on the METLIN-SMRT dataset, the predicted retention time is under the same experimental conditions as the METLIN-SMRT set.
+
+.. autofunction:: molnet.MolNet.pred_rt
+
+For example:
 
 .. code-block:: python
 
@@ -120,18 +127,15 @@ For RT prediction, please use ``pred_rt`` as shown in the following codes after 
 
    # Pred RT
    rt_df = molnet_engine.pred_rt()
-   """Predict Retention Time (RT) values.
-   Args:
-       path_to_results (Optional[str]): Path to save the prediction results. The file will be saved in '.csv' format. If None, the results won't be saved. 
-       path_to_checkpoint (Optional[str]): Path to the model checkpoint. If None, the model will be downloaded from a default URL.
-   Returns:
-       pd.DataFrame: DataFrame containing the predicted RT values.
-   """
 
 CCS prediction
 ~~~~~~~~~~~~~~
 
-For CCS prediction, please use ``pred_ccs`` as shown in the following codes after instantiating a MolNet object. 
+For CCS prediction, please use ``pred_ccs`` function after instantiating a MolNet object. 
+
+.. autofunction:: molnet.MolNet.pred_ccs
+
+For example: 
 
 .. code-block:: python
 
@@ -140,18 +144,15 @@ For CCS prediction, please use ``pred_ccs`` as shown in the following codes afte
 
    # Pred CCS
    ccs_df = molnet_engine.pred_ccs()
-   """Predict Collision Cross Section (CCS) values.
-   Args:
-       path_to_results (Optional[str]): Path to save the prediction results. The file will be saved in '.csv' format. If None, the results won't be saved. 
-       path_to_checkpoint (Optional[str]): Path to the model checkpoint. If None, the model will be downloaded from a default URL.
-   Returns:
-       pd.DataFrame: DataFrame containing the predicted CCS values.
-   """
 
 Molecular feature embedding
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For saving the molecular embeddings, please use the following codes after instantiating a MolNet object. 
+For saving the molecular embeddings, please use the following ``save_features`` function after instantiating a MolNet object. 
+
+.. autofunction:: molnet.MolNet.save_features
+
+For example: 
 
 .. code-block:: python
 

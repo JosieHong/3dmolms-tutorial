@@ -1,4 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path('..', 'src').resolve()))
 
 # -- Project information
 
@@ -6,8 +9,8 @@ project = '3DMolMS'
 copyright = '2025, Yuhui Hong'
 author = 'Yuhui Hong'
 
-release = '0.1.10'
-version = '0.1.10'
+release = '0.1.11'
+version = '0.1.11'
 
 # -- General configuration
 
@@ -20,6 +23,27 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
 ]
+autodoc_mock_imports = [
+    # External packages
+    'requests',
+    'numpy',
+    'pandas',
+    'yaml',
+    'pickle',
+    'pathlib',
+    'pyteomics',
+    'zipfile',
+    'torch',
+    'rdkit',
+    'PIL',
+    'matplotlib',
+    
+    # Local modules
+    'model',  # for .model
+    'dataset',  # for .dataset
+    'data_utils',  # for .data_utils
+    'utils'  # for .utils
+]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -30,7 +54,6 @@ intersphinx_disabled_domains = ['std']
 templates_path = ['_templates']
 
 # -- Options for HTML output
-
 html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
