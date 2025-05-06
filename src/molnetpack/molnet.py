@@ -13,7 +13,7 @@ try:
 except ImportError:
 	print("PyTorch is not installed. Please install it to use this module.")
 	raise
-	
+
 from rdkit import Chem, RDLogger
 from rdkit.Chem import Descriptors, Draw, AllChem
 from PIL import Image, ImageFilter
@@ -80,6 +80,18 @@ class MolNet:
 		torch.cuda.manual_seed(seed)
 
 	def load_data(self, path_to_test_data):
+		"""Load data from the specified path.
+
+		:param path_to_test_data: Path to the test data file. Supported formats are 'csv', 'mgf', and 'pkl'.
+		:type path_to_test_data: str
+		:return: None
+		:rtype: None
+
+		This method loads molecular data from the given file path using appropriate loaders
+		based on file extension. For CSV files, it applies filters according to the configuration.
+		For MGF files, it filters spectra and converts them to the internal format.
+		For PKL files, it loads the pickled data directly.
+		"""
 		loaders = {
 			'csv': lambda p: csv2pkl_wfilter(p, self.data_config['encoding']),
 			'mgf': lambda p: mgf2pkl(filter_spec(mgf.read(p), self.data_config['all'], 
@@ -154,6 +166,19 @@ class MolNet:
 		model.load_state_dict(torch.load(checkpoint_path, map_location=self.device, weights_only=True)['model_state_dict'])
 
 	def save_features(self, checkpoint_path=None, instrument='qtof'): 
+		"""Extract molecular feature embeddings from the encoder model.
+
+		:param checkpoint_path: Optional path to a custom encoder model checkpoint file.
+		:type checkpoint_path: str, optional
+		:param instrument: Instrument type to use for feature extraction, either 'qtof' or 'orbitrap'.
+		:type instrument: str, default='qtof'
+		:return: Tuple containing molecule IDs and corresponding feature embeddings.
+		:rtype: tuple(list, numpy.ndarray)
+
+		This method extracts latent feature embeddings from the encoder component of the model
+		for the loaded molecules. These features can be used for downstream tasks such as
+		clustering, similarity search, or transfer learning.
+		"""
 		self.encoder = Encoder(**self.msms_config['model']).to(self.device)
 		self.load_checkpoint('save_feat', checkpoint_path, instrument)
 		ids, features = pred_feat(self.encoder, self.device, self.valid_loader, 
@@ -161,6 +186,21 @@ class MolNet:
 		return ids, features.cpu().detach().numpy()
 
 	def pred_msms(self, path_to_results=None, path_to_checkpoint=None, instrument='qtof'): 
+		"""Predict MS/MS spectra for loaded molecules.
+
+		:param path_to_results: Optional path to save prediction results. Supports '.mgf' and '.csv' formats.
+		:type path_to_results: str, optional
+		:param path_to_checkpoint: Optional path to a custom model checkpoint file.
+		:type path_to_checkpoint: str, optional
+		:param instrument: Instrument type to use for prediction, either 'qtof' or 'orbitrap'.
+		:type instrument: str, default='qtof'
+		:return: DataFrame containing MS/MS prediction results.
+		:rtype: pandas.DataFrame
+
+		This method predicts MS/MS spectra for previously loaded molecules using the specified
+		instrument type. Results include m/z values, intensities, and associated metadata.
+		If a path is provided, results are saved in either MGF or CSV format.
+		"""
 		assert instrument in ['qtof', 'orbitrap'], 'Instrument should be either "qtof" or "orbitrap".'
 
 		self.msms_model = MolNet_MS(self.msms_config['model']).to(self.device)
@@ -232,6 +272,19 @@ class MolNet:
 		return spectra
 
 	def pred_ccs(self, path_to_results=None, path_to_checkpoint=None):
+		"""Predict collision cross section (CCS) values for loaded molecules.
+
+		:param path_to_results: Optional path to save prediction results as CSV.
+		:type path_to_results: str, optional
+		:param path_to_checkpoint: Optional path to a custom model checkpoint file.
+		:type path_to_checkpoint: str, optional
+		:return: DataFrame containing CCS prediction results.
+		:rtype: pandas.DataFrame
+
+		This method predicts collision cross section values for previously loaded molecules
+		using a trained deep learning model. Results include molecule IDs, SMILES structures,
+		precursor types, and predicted CCS values in a pandas DataFrame.
+		"""
 		self.ccs_model = MolNet_Oth(self.ccs_config['model']).to(self.device)
 		self.load_checkpoint('ccs', path_to_checkpoint)
 		id_list, pred_list = eval_step_oth(self.ccs_model, self.device, self.valid_loader, 
@@ -259,6 +312,19 @@ class MolNet:
 		return self.ccs_res_df
 
 	def pred_rt(self, path_to_results=None, path_to_checkpoint=None): 
+		"""Predict retention times for loaded molecules.
+
+		:param path_to_results: Optional path to save prediction results as CSV.
+		:type path_to_results: str, optional
+		:param path_to_checkpoint: Optional path to a custom model checkpoint file.
+		:type path_to_checkpoint: str, optional
+		:return: DataFrame containing retention time prediction results.
+		:rtype: pandas.DataFrame
+
+		This method predicts chromatographic retention times for previously loaded molecules
+		using a trained deep learning model. Results include molecule IDs, SMILES structures,
+		and predicted retention times in a pandas DataFrame.
+		"""
 		self.rt_model = MolNet_Oth(self.rt_config['model']).to(self.device)
 		self.load_checkpoint('rt', path_to_checkpoint)
 		id_list, pred_list = eval_step_oth(self.rt_model, self.device, self.valid_loader, 
@@ -283,6 +349,19 @@ class MolNet:
 		return self.rt_res_df
 
 def plot_msms(msms_res_df, dir_to_img): 
+	"""Plot MS/MS spectra with molecular structures.
+
+	:param msms_res_df: DataFrame containing MS/MS prediction results.
+	:type msms_res_df: pandas.DataFrame
+	:param dir_to_img: Directory path to save the generated spectrum plots.
+	:type dir_to_img: str
+	:return: None
+	:rtype: None
+
+	This function creates visualization plots for MS/MS spectra, displaying m/z values
+	versus relative intensities as bar charts. Each plot includes the 2D structure
+	of the corresponding molecule. Images are saved to the specified directory.
+	"""
 	os.makedirs(dir_to_img, exist_ok = True)
 
 	img_dpi = 300
