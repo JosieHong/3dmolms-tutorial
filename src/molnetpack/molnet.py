@@ -7,9 +7,13 @@ import pickle
 from pathlib import Path
 from pyteomics import mgf
 import zipfile
-import torch
-from torch.utils.data import DataLoader
-
+try:
+	import torch
+	from torch.utils.data import DataLoader
+except ImportError:
+	print("PyTorch is not installed. Please install it to use this module.")
+	raise
+	
 from rdkit import Chem, RDLogger
 from rdkit.Chem import Descriptors, Draw, AllChem
 from PIL import Image, ImageFilter
