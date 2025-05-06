@@ -7,6 +7,7 @@ This section contains instructions for training, fine-tuning, and testing 3DMolM
    :maxdepth: 2
    
    msms_prediction
+   msms_training
    rt_prediction
    ccs_prediction
    fine_tuning

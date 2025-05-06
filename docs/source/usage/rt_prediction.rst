@@ -10,10 +10,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data preparation
-----------------
+**Step 1**: Data preparation
+----------------------------
 
-Step 1: Download the retention time dataset, `METLIN <https://figshare.com/articles/dataset/The_METLIN_small_molecule_dataset_for_machine_learning-based_retention_time_prediction/8038913?file=18130625>`_. The structure of data directory is:
+Download the retention time dataset, `METLIN <https://figshare.com/articles/dataset/The_METLIN_small_molecule_dataset_for_machine_learning-based_retention_time_prediction/8038913?file=18130625>`_. The structure of data directory is:
 
 .. code-block:: text
 
@@ -21,19 +21,19 @@ Step 1: Download the retention time dataset, `METLIN <https://figshare.com/artic
      |- origin
        |- SMRT_dataset.sdf
 
-Preprocessing
--------------
+**Step 2**: Preprocessing
+-------------------------
 
-Step 2: Use the following commands to preprocess the datasets. The settings of datasets are in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
+Use the following commands to preprocess the datasets. The settings of datasets are in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
 
 .. code-block:: bash
 
    python ./src/preprocess_oth.py --dataset metlin
 
-Training
---------
+**Step 3**: Training
+--------------------
 
-Step 3: Use the following commands to train the model. The settings of model and training are in ``./src/molnetpack/config/molnet_rt.yml``. 
+Use the following commands to train the model. The settings of model and training are in ``./src/molnetpack/config/molnet_rt.yml``. 
 
 Learning from scratch:
 
@@ -43,11 +43,11 @@ Learning from scratch:
    --test_data ./data/metlin_etkdgv3_test.pkl \
    --model_config_path ./src/molnetpack/config/molnet_rt.yml \
    --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-   --checkpoint_path ./check_point/molnet_rt_etkdgv3.pt
+   --checkpoint_path ./check_point/molnet_v1.11_rt_etkdgv3.pt
 
 If you'd like to train this model from the pre-trained model on MS/MS prediction, please download the pre-trained model from `release v1.1.8 <https://github.com/JosieHong/3DMolMS/releases/tag/v1.1.8>`_.
 
-Learning from pretrained model:
+Learning from MS/MS model:
 
 .. code-block:: bash
 
@@ -55,6 +55,6 @@ Learning from pretrained model:
    --test_data ./data/metlin_etkdgv3_test.pkl \
    --model_config_path ./src/molnetpack/config/molnet_rt.yml \
    --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-   --checkpoint_path ./check_point/molnet_rt_etkdgv3_tl.pt \
+   --checkpoint_path ./check_point/molnet_v1.11_rt_etkdgv3_tl.pt \
    --transfer \
-   --resume_path ./check_point/molnet_qtof_etkdgv3.pt
+   --resume_path ./check_point/molnet_v1.11_qtof_etkdgv3.pt

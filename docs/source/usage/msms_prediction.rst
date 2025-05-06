@@ -1,5 +1,5 @@
 Tandem mass spectra prediction
-==============
+==============================
 
 This guide explains how to use 3DMolMS for tandem mass spectra (MS/MS) prediction.
 
@@ -8,10 +8,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Input preparation
-----------------
+**Step 1**: Input preparation
+-----------------------------
 
-Step 1: Prepare the test set. The following formats are supported: csv, mgf, or `customed pkl <https://github.com/JosieHong/3DMolMS/blob/main/molmspack/data_utils/all2pkl.py>`_.
+Prepare the test set. The following formats are supported: csv, mgf, or `customed pkl <https://github.com/JosieHong/3DMolMS/blob/main/molmspack/data_utils/all2pkl.py>`_.
 
 CSV Format Example
 ~~~~~~~~~~~~~~~~~
@@ -69,10 +69,10 @@ The unsupported input will be filtered out automatically when loading the datase
    * - Collision energy
      - any number
 
-Running prediction
------------------
+**Step 2**: Running prediction
+------------------------------
 
-Step 2: Predict the MS/MS spectra using the following command:
+Predict the MS/MS spectra using the following command:
 
 .. code-block:: bash
 

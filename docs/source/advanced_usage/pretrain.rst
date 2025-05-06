@@ -8,10 +8,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data preparation
----------------
+**Step 1**: Data preparation
+----------------------------
 
-Step 1: Download the QM9 dataset from `Figshare <https://figshare.com/collections/Quantum_chemistry_structures_and_properties_of_134_kilo_molecules/978904>`_. The expected data directory structure is:
+Download the QM9 dataset from `Figshare <https://figshare.com/collections/Quantum_chemistry_structures_and_properties_of_134_kilo_molecules/978904>`_. The expected data directory structure is:
 
 .. code-block:: text
 
@@ -21,19 +21,19 @@ Step 1: Download the QM9 dataset from `Figshare <https://figshare.com/collection
        |- dsC7O2H10nsd.xyz.tar.bz2
        |- uncharacterized.txt
 
-Preprocessing
-------------
+**Step 2**: Preprocessing
+-------------------------
 
-Step 2: Use the following commands to preprocess the datasets. The dataset configuration is stored in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
+Use the following commands to preprocess the datasets. The dataset configuration is stored in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
 
 .. code-block:: bash
 
    python ./src/qm92pkl.py --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml 
 
-Pretraining
-----------
+**Step 3**: Pretraining
+-----------------------
 
-Step 3: Use the following commands to pretrain the model. The model and training settings are in ``./src/molnetpack/config/molnet_pre.yml``.
+Use the following commands to pretrain the model. The model and training settings are in ``./src/molnetpack/config/molnet_pre.yml``.
 
 .. code-block:: bash
 

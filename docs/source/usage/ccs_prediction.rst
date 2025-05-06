@@ -10,10 +10,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data preparation
-----------------
+**Step 1**: Data preparation
+----------------------------
 
-Step 1: Download the cross-collision section dataset, `AllCCS <http://allccs.zhulab.cn/>`_, manually or using ``download_allccs.py``:
+Download the cross-collision section dataset, `AllCCS <http://allccs.zhulab.cn/>`_, manually or using ``download_allccs.py``:
 
 .. code-block:: bash
 
@@ -27,16 +27,19 @@ The structure of data directory is:
      |- origin
        |- allccs_download.csv
 
-Preprocessing
--------------
+**Step 2**: Preprocessing
+-------------------------
 
-Step 2: Use the following commands to preprocess the datasets. The settings of datasets are in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
+Use the following commands to preprocess the datasets. The settings of datasets are in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
 
 .. code-block:: bash
 
    python ./src/preprocess_oth.py --dataset allccs --data_config_path ./
 
-Step 3: Use the following commands to train the model. The settings of model and training are in ``./src/molnetpack/config/molnet_ccs.yml``. 
+**Step 3**: Training
+--------------------
+
+Use the following commands to train the model. The settings of model and training are in ``./src/molnetpack/config/molnet_ccs.yml``. 
 
 Learning from scratch:
 

@@ -8,10 +8,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data preparation
-----------------
+**Step 1**: Data preparation
+----------------------------
 
-Step 1: Please prepare the data of molecular properties as:
+Please prepare the data of molecular properties as:
 
 .. code-block:: text
 
@@ -25,10 +25,10 @@ Step 1: Please prepare the data of molecular properties as:
 
 where ``prop`` column is the RT or CCS values.
 
-Training
---------
+**Step 2**: Training
+--------------------
 
-Step 2: Fine-tune the model!
+Fine-tune the model!
 
 .. code-block:: bash
 
@@ -42,10 +42,10 @@ Step 2: Fine-tune the model!
 
    # If the data is already preprocessed, you could use pkl file directly.
 
-Running prediction
-------------------
+**Step 3**: Running prediction
+------------------------------
 
-Step 3: Predict the unlabeled data
+Predict the unlabeled data: 
 
 .. code-block:: bash
 

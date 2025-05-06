@@ -11,10 +11,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../sourcecode` page.
 
-Data preparation
-~~~~~~~~~~~~~~~
+**Step 1**: Data preparation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 1: Download the HMDB molecules dataset from `HMDB Downloads <https://hmdb.ca/downloads>`_. The expected data directory structure is:
+Download the HMDB molecules dataset from `HMDB Downloads <https://hmdb.ca/downloads>`_. The expected data directory structure is:
 
 .. code-block:: text
 
@@ -22,10 +22,10 @@ Step 1: Download the HMDB molecules dataset from `HMDB Downloads <https://hmdb.c
      |- hmdb
        |- structures.sdf
 
-Preprocessing
-~~~~~~~~~~~~
+**Step 2**: Preprocessing
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 2: Use the following commands to preprocess the datasets. The dataset configuration is stored in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
+Use the following commands to preprocess the datasets. The dataset configuration is stored in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
 
 Using ETKDGv3:
 
@@ -39,10 +39,10 @@ Or using original conformation:
 
    python ./src/hmdb2pkl.py --data_config_path ./src/molnetpack/config/preprocess_hmdb.yml
 
-MS/MS generation
-~~~~~~~~~~~~~~~
+**Step 3**: MS/MS generation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 3: Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``. Remember to modify the commands if you're using the original conformations from HMDB.
+Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``. Remember to modify the commands if you're using the original conformations from HMDB.
 
 .. code-block:: bash
 
@@ -63,10 +63,10 @@ Setup
 
 Please set up the environment as shown in the :doc:`../installation` page.
 
-Data preparation
-~~~~~~~~~~~~~~~
+**Step 1**: Data preparation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 1: Download the RefMet molecules dataset from `RefMet Browse <https://www.metabolomicsworkbench.org/databases/refmet/browse.php>`_. The expected data directory structure is:
+Download the RefMet molecules dataset from `RefMet Browse <https://www.metabolomicsworkbench.org/databases/refmet/browse.php>`_. The expected data directory structure is:
 
 .. code-block:: text
 
@@ -74,19 +74,19 @@ Step 1: Download the RefMet molecules dataset from `RefMet Browse <https://www.m
      |- refmet
        |- refmet.csv
 
-Preprocessing
-~~~~~~~~~~~~
+**Step 2**: Preprocessing
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 2: Use the following commands to preprocess the datasets. The dataset configuration is stored in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
+Use the following commands to preprocess the datasets. The dataset configuration is stored in ``./src/molnetpack/config/preprocess_etkdgv3.yml``.
 
 .. code-block:: bash
 
    python ./src/refmet2pkl.py --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml
 
-MS/MS generation
-~~~~~~~~~~~~~~~
+**Step 3**: MS/MS generation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Step 3: Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``.
+Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``.
 
 .. code-block:: bash
 
