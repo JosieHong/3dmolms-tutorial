@@ -1,8 +1,8 @@
-def pred_step:
+def pred_step():
     pass
 
-def eval_step_oth:
+def eval_step_oth():
     pass
 
-def pred_feat:
+def pred_feat():
     pass
