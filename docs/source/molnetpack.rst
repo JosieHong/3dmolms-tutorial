@@ -39,11 +39,11 @@ The sample input files, a CSV and an MGF, are located at ``./test/demo_input.csv
 
 To get started quickly, you can instantiate a MolNet and load a CSV or MGF file for MS/MS prediction using ``load_data`` function:
 
-.. autofunction:: molnetpack.molnet.MolNet.load_data
+.. autofunction:: molnetpack.MolNet.load_data
 
 Then predict the MS/MS spectra using ``pred_msms`` function. The predicted MS/MS spectra will be saved in the specified path. The default format is MGF, but you can also save it as a CSV file by specifying the file name with a ``.csv`` extension.
 
-.. autofunction:: molnetpack.molnet.MolNet.pred_msms
+.. autofunction:: molnetpack.MolNet.pred_msms
 
 For example: 
 
@@ -74,7 +74,7 @@ Plot predicted MS/MS
 
 The predicted MS/MS spectra can be visualized using the ``plot_msms`` function: 
 
-.. autofunction:: molnetpack.molnet.plot_msms
+.. autofunction:: molnetpack.plot_msms
 
 You may customize the plot by updating the source code directory, such as the size of the image and the color scheme. 
 
@@ -116,7 +116,7 @@ RT prediction
 
 For RT prediction, please use ``pred_rt`` function after instantiating a MolNet object. Please note that since this model is trained on the METLIN-SMRT dataset, the predicted retention time is under the same experimental conditions as the METLIN-SMRT set.
 
-.. autofunction:: molnetpack.molnet.MolNet.pred_rt
+.. autofunction:: molnetpack.MolNet.pred_rt
 
 For example:
 
@@ -133,7 +133,7 @@ CCS prediction
 
 For CCS prediction, please use ``pred_ccs`` function after instantiating a MolNet object. 
 
-.. autofunction:: molnetpack.molnet.MolNet.pred_ccs
+.. autofunction:: molnetpack.MolNet.pred_ccs
 
 For example: 
 
@@ -150,7 +150,7 @@ Molecular feature embedding
 
 For saving the molecular embeddings, please use the following ``save_features`` function after instantiating a MolNet object. 
 
-.. autofunction:: molnetpack.molnet.MolNet.save_features
+.. autofunction:: molnetpack.MolNet.save_features
 
 For example: 
 
