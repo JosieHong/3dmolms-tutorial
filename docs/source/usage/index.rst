@@ -10,4 +10,4 @@ This section contains instructions for training, fine-tuning, and testing 3DMolM
    msms_training
    rt_prediction
    ccs_prediction
-   fine_tuning
+   finetuning
