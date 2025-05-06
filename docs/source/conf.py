@@ -36,12 +36,6 @@ autodoc_mock_imports = [
     'rdkit',
     'PIL',
     'matplotlib',
-    
-    # Local modules
-    'model',  # for .model
-    'dataset',  # for .dataset
-    'data_utils',  # for .data_utils
-    'utils'  # for .utils
 ]
 import sys
 from pathlib import Path
