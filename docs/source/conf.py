@@ -3,6 +3,15 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path('..', 'src').resolve()))
 
+try:
+    import molnetpack
+    print("Successfully imported molnetpack")
+    # Optionally print some debug info
+    print(f"Found MolNet class: {'MolNet' in dir(molnetpack)}")
+except ImportError as e:
+    print(f"Failed to import molnetpack: {e}")
+    # The autodoc_mock_imports should handle this case
+
 # -- Project information
 
 project = '3DMolMS'
