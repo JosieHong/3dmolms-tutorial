@@ -1,16 +1,4 @@
 # Configuration file for the Sphinx documentation builder.
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path('..', 'src').resolve()))
-
-try:
-    import molnetpack
-    print("Successfully imported molnetpack")
-    # Optionally print some debug info
-    print(f"Found MolNet class: {'MolNet' in dir(molnetpack)}")
-except ImportError as e:
-    print(f"Failed to import molnetpack: {e}")
-    # The autodoc_mock_imports should handle this case
 
 # -- Project information
 
@@ -32,6 +20,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
 ]
+
+# For autodoc to work with modules that are not installed, we need to mock them before import molnetpack.
 autodoc_mock_imports = [
     # External packages
     'requests',
@@ -53,6 +43,18 @@ autodoc_mock_imports = [
     'data_utils',  # for .data_utils
     'utils'  # for .utils
 ]
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path('..', 'src').resolve()))
+
+try:
+    import molnetpack
+    print("Successfully imported molnetpack")
+    # Optionally print some debug info
+    print(f"Found MolNet class: {'MolNet' in dir(molnetpack)}")
+except ImportError as e:
+    print(f"Failed to import molnetpack: {e}")
+    # The autodoc_mock_imports should handle this case
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
