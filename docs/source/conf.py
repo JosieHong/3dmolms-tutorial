@@ -62,7 +62,3 @@ try:
 except ImportError as e:
     print(f"Failed to import molnetpack: {e}")
     # The autodoc_mock_imports should handle this case
-
-from molnetpack import __version__
-release = __version__
-version = __version__

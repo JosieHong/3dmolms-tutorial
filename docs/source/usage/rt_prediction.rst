@@ -46,7 +46,7 @@ Learning from scratch:
    --test_data ./data/metlin_etkdgv3_test.pkl \
    --model_config_path ./src/molnetpack/config/molnet_rt.yml \
    --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-   --checkpoint_path ./check_point/molnet_|version|_rt_etkdgv3.pt
+   --checkpoint_path ./check_point/molnet_|molnetpack.__version__|_rt_etkdgv3.pt
    </pre>
    </div>
    </div>
