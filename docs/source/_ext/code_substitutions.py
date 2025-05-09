@@ -9,9 +9,25 @@ from pathlib import Path
 # Load the version once when the extension is loaded
 def get_version():
     try:
-        # Set up path to version file
-        src_path = Path('..', 'src').resolve()
-        version_path = src_path / 'molnetpack' / '_version.py'
+        # Find the repository root - go up two levels from docs/source
+        docs_source_dir = Path(__file__).resolve().parent.parent  # _ext -> source
+        repo_root = docs_source_dir.parent.parent  # source -> docs -> root
+        version_path = repo_root / 'src' / 'molnetpack' / '_version.py'
+        
+        print(f"Looking for version file at: {version_path}")
+        
+        if not version_path.exists():
+            # Try alternative path
+            repo_root = docs_source_dir.parent  # source -> docs
+            version_path = repo_root.parent / 'src' / 'molnetpack' / '_version.py'
+            print(f"Alternative path: {version_path}")
+        
+        if not version_path.exists(): 
+            # One more attempt - list directories to help debug
+            print(f"Repository root directory contents: {os.listdir(repo_root)}")
+            if (repo_root / 'src').exists():
+                print(f"src directory contents: {os.listdir(repo_root / 'src')}")
+            raise FileNotFoundError(f"Could not find _version.py in expected locations")
         
         # Import just the version file
         spec = importlib.util.spec_from_file_location("_version", version_path)
