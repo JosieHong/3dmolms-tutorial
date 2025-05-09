@@ -1,4 +1,7 @@
 # Configuration file for the Sphinx documentation builder.
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent / '_ext'))
 
 # -- Project information
 project = '3DMolMS'
@@ -14,6 +17,9 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
+
+    # customed extensions
+    'code_substitutions',
 ]
 
 # For autodoc to work with modules that are not installed, we need to mock them before import molnetpack.
@@ -47,18 +53,3 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
-
-# -- Autodoc configuration
-import sys
-from pathlib import Path
-sys.path.insert(0, str(Path('..', 'src').resolve()))
-
-try:
-    import molnetpack
-    print("Successfully imported molnetpack")
-    # Optionally print some debug info
-    print(f"Found MolNet class: {'MolNet' in dir(molnetpack)}")
-
-except ImportError as e:
-    print(f"Failed to import molnetpack: {e}")
-    # The autodoc_mock_imports should handle this case

@@ -67,7 +67,7 @@ Using molecules from RefMet
 Setup
 ~~~~~
 
-Please set up the environment as shown in the :doc:`../installation` page.
+Please set up the environment as shown in the :doc:`../sourcecode` page.
 
 **Step 1**: Data preparation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
