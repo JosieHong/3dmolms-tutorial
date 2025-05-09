@@ -51,20 +51,17 @@ Run the following commands to preprocess the datasets. Specify the dataset with 
 
 Use the following commands to train the model. Configuration settings for the model and training process are located in ``./src/molnetpack/config/molnet.yml``.
 
-.. raw:: html
-
-  <div class="highlight-bash notranslate">
-  <div class="highlight">
-  <pre>
+.. code-block:: bash
+  
   # Train the model from pretrain: 
   # Q-TOF: 
   python ./src/train.py --train_data ./data/qtof_etkdgv3_train.pkl \
   --test_data ./data/qtof_etkdgv3_test.pkl \
   --model_config_path ./src/molnetpack/config/molnet.yml \
   --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-  --checkpoint_path ./check_point/molnet_|version|_qtof_etkdgv3_tl.pt \
+  --checkpoint_path ./check_point/molnet_<version>_qtof_etkdgv3_tl.pt \
   --transfer \
-  --resume_path ./check_point/molnet_|version|_pre_etkdgv3.pt 
+  --resume_path ./check_point/molnet_<version>_pre_etkdgv3.pt 
   # Orbitrap can be done in a similar way. 
 
   # Train the model from scratch
@@ -73,44 +70,38 @@ Use the following commands to train the model. Configuration settings for the mo
   --test_data ./data/qtof_etkdgv3_test.pkl \
   --model_config_path ./src/molnetpack/config/molnet.yml \
   --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-  --checkpoint_path ./check_point/molnet_|version|_qtof_etkdgv3.pt \
-  --ex_model_path ./check_point/molnet_|version|_qtof_etkdgv3_jit.pt --device 0 
+  --checkpoint_path ./check_point/molnet_<version>_qtof_etkdgv3.pt \
+  --ex_model_path ./check_point/molnet_<version>_qtof_etkdgv3_jit.pt --device 0 
 
   # Orbitrap: 
   python ./src/train.py --train_data ./data/orbitrap_etkdgv3_train.pkl \
   --test_data ./data/orbitrap_etkdgv3_test.pkl \
   --model_config_path ./src/molnetpack/config/molnet.yml \
   --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-  --checkpoint_path ./check_point/molnet_|version|_orbitrap_etkdgv3.pt \
-  --ex_model_path ./check_point/molnet_|version|_orbitrap_etkdgv3_jit.pt --device 0
-  </pre>
-  </div>
-  </div>
+  --checkpoint_path ./check_point/molnet_<version>_orbitrap_etkdgv3.pt \
+  --ex_model_path ./check_point/molnet_<version>_orbitrap_etkdgv3_jit.pt --device 0
 
 **Step 5**: Evaluation
 ---------------------
 
 Let's evaluate the model trained above! 
 
-.. raw:: html
+.. code-block:: bash
 
-  <div class="highlight-bash notranslate">
-  <div class="highlight">
-  <pre>
   # Predict the spectra: 
   # Q-TOF: 
   python ./src/pred.py \
   --test_data ./data/qtof_etkdgv3_test.pkl \
   --model_config_path ./src/molnetpack/config/molnet.yml \
   --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-  --resume_path ./check_point/molnet_|version|_qtof_etkdgv3.pt \
+  --resume_path ./check_point/molnet_<version>_qtof_etkdgv3.pt \
   --result_path ./result/pred_qtof_etkdgv3_test.mgf 
   # Orbitrap: 
   python ./src/pred.py \
   --test_data ./data/orbitrap_etkdgv3_test.pkl \
   --model_config_path ./src/molnetpack/config/molnet.yml \
   --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-  --resume_path ./check_point/molnet_|version|_orbitrap_etkdgv3.pt \
+  --resume_path ./check_point/molnet_<version>_orbitrap_etkdgv3.pt \
   --result_path ./result/pred_orbitrap_etkdgv3_test.mgf 
 
   # Evaluate the cosine similarity between experimental spectra and predicted spectra:
@@ -120,6 +111,3 @@ Let's evaluate the model trained above!
   # Orbitrap: 
   python ./src/eval.py ./data/orbitrap_etkdgv3_test.pkl ./result/pred_orbitrap_etkdgv3_test.mgf \
   ./eval_orbitrap_etkdgv3_test.csv ./eval_orbitrap_etkdgv3_test.png
-  </pre>
-  </div>
-  </div>

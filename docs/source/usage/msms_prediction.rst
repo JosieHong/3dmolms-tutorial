@@ -74,21 +74,15 @@ The unsupported input will be filtered out automatically when loading the datase
 
 Predict the MS/MS spectra using the following command:
 
-.. raw:: html
+.. code-block:: bash
 
-  <div class="highlight-bash notranslate">
-  <div class="highlight">
-  <pre>
   python ./src/pred.py \
   --test_data ./demo/demo_input.csv \
   --model_config_path ./src/molnetpack/config/molnet.yml \
   --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-  --resume_path ./check_point/molnet_|version|_qtof_etkdgv3.pt \
+  --resume_path ./check_point/molnet_<version>_qtof_etkdgv3.pt \
   --result_path ./test/demo_output.mgf \
   --save_img_dir ./img/
-  </pre>
-  </div>
-  </div>
 
 Arguments
 ~~~~~~~~

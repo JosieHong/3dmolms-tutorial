@@ -43,36 +43,24 @@ Use the following commands to train the model. The settings of model and trainin
 
 Learning from scratch:
 
-.. raw:: html
+.. code-block:: bash
 
-   <div class="highlight-bash notranslate">
-   <div class="highlight">
-   <pre>
    python ./src/train_ccs.py --train_data ./data/allccs_etkdgv3_train.pkl \
    --test_data ./data/allccs_etkdgv3_test.pkl \
    --model_config_path ./src/molnetpack/config/molnet_ccs.yml \
    --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-   --checkpoint_path ./check_point/molnet_|version|_ccs_etkdgv3.pt 
-   </pre>
-   </div>
-   </div>
+   --checkpoint_path ./check_point/molnet_<version>_ccs_etkdgv3.pt 
 
 If you'd like to train this model from the pre-trained model on MS/MS prediction, please download the pre-trained model from `release v1.2.0 <https://github.com/JosieHong/3DMolMS/releases/tag/v1.2.0>`_. 
 
 Learning from pretrained model:
 
-.. raw:: html
+.. code-block:: bash
 
-   <div class="highlight-bash notranslate">
-   <div class="highlight">
-   <pre>
    python ./src/train_ccs.py --train_data ./data/allccs_etkdgv3_train.pkl \
    --test_data ./data/allccs_etkdgv3_test.pkl \
    --model_config_path ./src/molnetpack/config/molnet_ccs.yml \
    --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-   --checkpoint_path ./check_point/molnet_|version|_ccs_etkdgv3_tl.pt \
+   --checkpoint_path ./check_point/molnet_<version>_ccs_etkdgv3_tl.pt \
    --transfer \
-   --resume_path ./check_point/molnet_|version|_qtof_etkdgv3.pt 
-   </pre>
-   </div>
-   </div>
+   --resume_path ./check_point/molnet_<version>_qtof_etkdgv3.pt 

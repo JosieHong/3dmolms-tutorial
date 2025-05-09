@@ -1,12 +1,10 @@
 # Configuration file for the Sphinx documentation builder.
-import sys
-from pathlib import Path
-sys.path.append(str(Path(__file__).parent / '_ext'))
 
 # -- Project information
 project = '3DMolMS'
 copyright = '2023, Yuhui Hong'
 author = 'Yuhui Hong'
+version = 'v1.2.0'
 
 # -- General configuration
 extensions = [
@@ -17,9 +15,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.viewcode',
     'sphinx.ext.todo',
-
-    # customed extensions
-    'code_substitutions',
 ]
 
 # For autodoc to work with modules that are not installed, we need to mock them before import molnetpack.
