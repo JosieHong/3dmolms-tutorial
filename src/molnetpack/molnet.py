@@ -16,6 +16,8 @@ except ImportError:
 
 from rdkit import Chem, RDLogger
 from rdkit.Chem import Descriptors, Draw, AllChem
+# Disable RDKit warnings
+RDLogger.DisableLog('rdApp.*')
 from PIL import Image, ImageFilter
 from matplotlib import pyplot as plt
 from matplotlib.offsetbox import (OffsetImage, AnnotationBbox)
@@ -27,15 +29,13 @@ from .data_utils import (
 	filter_spec, mgf2pkl, ms_vec2dict
 )
 from .utils import pred_step, eval_step_oth, pred_feat
-
-# Disable RDKit warnings
-RDLogger.DisableLog('rdApp.*')
+from ._version import __version__
 
 
 
 class MolNet:
 	def __init__(self, device, seed):
-		self.version = 'v1.1.11'
+		self.version = __version__
 		print('MolNetPack version:', self.version)
 
 		self.device = device

@@ -1,16 +1,11 @@
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information
-
 project = '3DMolMS'
-copyright = '2025, Yuhui Hong'
+copyright = '2023, Yuhui Hong'
 author = 'Yuhui Hong'
 
-release = '0.1.11'
-version = '0.1.11'
-
 # -- General configuration
-
 extensions = [
     'sphinx.ext.duration',
     'sphinx.ext.doctest',
@@ -63,6 +58,11 @@ try:
     print("Successfully imported molnetpack")
     # Optionally print some debug info
     print(f"Found MolNet class: {'MolNet' in dir(molnetpack)}")
+
+    from molnetpack import __version__
+    release = __version__
+    version = __version__
 except ImportError as e:
     print(f"Failed to import molnetpack: {e}")
     # The autodoc_mock_imports should handle this case
+

@@ -44,16 +44,22 @@ Or using original conformation:
 
 Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``. Remember to modify the commands if you're using the original conformations from HMDB.
 
-.. code-block:: bash
+.. raw:: html
 
+   <div class="highlight-bash notranslate">
+   <div class="highlight">
+   <pre>
    for i in {0..21}; do 
      echo $i
      python ./src/pred.py --test_data ./data/hmdb/hmdb_etkdgv3_$i.pkl \
      --model_config_path ./src/molnetpack/config/molnet.yml \
      --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-     --resume_path ./check_point/molnet_qtof_etkdgv3.pt \
-     --result_path ./data/hmdb/molnet_v1.1_hmdb_etkdgv3_$i.mgf
+     --resume_path ./check_point/molnet_|version|_qtof_etkdgv3.pt \
+     --result_path ./data/hmdb/molnet_|version|_hmdb_etkdgv3_$i.mgf
    done
+   </pre>
+   </div>
+   </div>
 
 Using molecules from RefMet
 -------------------------
@@ -88,10 +94,16 @@ Use the following commands to preprocess the datasets. The dataset configuration
 
 Use the following commands to generate MS/MS spectra. The model configuration is stored in ``./src/molnetpack/config/molnet.yml``.
 
-.. code-block:: bash
+.. raw:: html
 
+   <div class="highlight-bash notranslate">
+   <div class="highlight">
+   <pre>
    python ./src/pred.py --test_data ./data/refmet/refmet_etkdgv3.pkl \
    --model_config_path ./src/molnetpack/config/molnet.yml \
    --data_config_path ./src/molnetpack/config/preprocess_etkdgv3.yml \
-   --resume_path ./check_point/molnet_qtof_etkdgv3.pt \
-   --result_path ./data/refmet/molnet_v1.1_refmet_etkdgv3.mgf
+   --resume_path ./check_point/molnet_|version|_qtof_etkdgv3.pt \
+   --result_path ./data/refmet/molnet_|version|_refmet_etkdgv3.mgf
+   </pre>
+   </div>
+   </div>
